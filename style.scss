@@ -7,116 +7,115 @@
     top: 0;
     left: 0;
     z-index: 999999;
-}
 
-.beautiful_ib_results div {
-    padding: 0;
-    margin: 0;
-}
+    div {
+        padding: 0;
+        margin: 0;
+    }
 
+    .spacer {
+        flex-grow: 1;
+        background: none;
+        width: 0;
+        height: 0;
+    }
 
-#close {
-    position: absolute;
-    top: .5em;
-    right: .5em;
-    font-size: 2em;
-    background: none;
-    margin: 0;
-    border: none;
-}
+    #close {
+        position: absolute;
+        top: .5em;
+        right: .5em;
+        font-size: 2em;
+        background: none;
+        margin: 0;
+        border: none;
+    }
 
-.header {
-    text-align: center;
-    margin: 2em;
-}
+    .header {
+        text-align: center;
+        margin: 2em;
+    }
 
-h1 {
-    font-size: 3em;
-    margin: 0;
-}
+    h1 {
+        font-size: 3em;
+        margin: 0;
+    }
 
-h2 {
-    font-size: 1.5em;
-    font-weight: 300;
-    margin: 0;
-}
+    h2 {
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 0;
+    }
 
-.subject-list {
-    display: grid;
-    max-width: 1200px;
-    margin: 0 auto;
-    grid-template-columns: auto auto auto;
-}
+    .subject-list {
+        display: grid;
+        max-width: 1200px;
+        margin: 0 auto;
+        grid-template-columns: auto auto auto;
+    }
 
-.card {
-    justify-self: center;
-    width: 15em;
-    height: 15em;
-}
+    .card {
+        justify-self: center;
+        width: 15em;
+        height: 15em;
 
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 0.3em;
-    perspective: 10em;
-    background: #ffffff;
-    transition: transform 600ms;
-    transform-style: preserve-3d;
-}
+        header {
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
 
-.card[data-flipped=true] .card-inner {
-    transform: rotateY(180deg);
-}
+        h3 {
+            font-size: 1.6em;
+            margin: 0;
+            display: inline;
+        }
 
-.card-face {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    padding: 1em;
-    width: calc(100% - 2em);
-    height: calc(100% - 2em);
-    background: #ffffff;
-}
+        span {
+            font-size: 1.6em;
+            padding: 0 10px;
+            color: rgba(0, 0, 0, 0.7);
+        }
 
-.card-inner .back {
-    transform: rotateY(180deg);
-}
+        button {
+            align-self: flex-end;
+            width: 100%;
+            background: none;
+            margin: 0;
+            border: none;
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: 100;
+            font-size: 1.6em;
+        }
 
-.card .spacer {
-    flex-grow: 1;
-    background: none;
-    width: 0;
-    height: 0;
-}
+        .card-face {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            padding: 1em;
+            width: calc(100% - 2em);
+            height: calc(100% - 2em);
+            background: #ffffff;
+        }
+    }
 
-.card header {
-    margin-bottom: 10px;
-    align-self: flex-start;
-}
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 0.3em;
+        perspective: 10em;
+        background: #ffffff;
+        transition: transform 600ms;
+        transform-style: preserve-3d;
 
-.card h3 {
-    font-size: 1.6em;
-    margin: 0;
-    display: inline;
-}
+        .back {
+            transform: rotateY(180deg);
+        }
+    }
 
-.card span {
-    font-size: 1.6em;
-    padding: 0 10px;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.card button {
-    align-self: flex-end;
-    width: 100%;
-    background: none;
-    margin: 0;
-    border: none;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: 100;
-    font-size: 1.6em;
+    .card[data-flipped=true] .card-inner {
+        transform: rotateY(180deg);
+    }
 }
