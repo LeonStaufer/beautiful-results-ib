@@ -1,6 +1,7 @@
 {
   "name": "IB Results",
   "description": "Makes every result look beautiful!",
+  "author": "Leon",
   "version": "0.0.1",
   "permissions": [
     "activeTab"
@@ -12,7 +13,8 @@
    {
      "matches": ["*://example.com/*"],
      "css": ["style.css"],
-     "js": ["contentScript.js"]
+     "js": ["contentScript.js"],
+     "all_frames": true
    }
  ],
   "manifest_version": 2
