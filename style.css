@@ -85,17 +85,18 @@
   width: calc(100% - 2em);
   height: calc(100% - 2em);
   background: #ffffff;
+  border-radius: 2em;
 }
 .beautiful_ib_results .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 0.3em;
   perspective: 10em;
   background: #ffffff;
   transition: transform 600ms;
   transform-style: preserve-3d;
+  border-radius: 2em;
 }
 .beautiful_ib_results .card-inner .back {
   transform: rotateY(180deg);
