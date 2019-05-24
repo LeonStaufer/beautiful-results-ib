@@ -3,12 +3,20 @@
   background: #fafafa;
   position: absolute;
   width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 999999;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+}
+.beautiful_ib_results[data-visible=false] {
+  display: none;
+}
+.beautiful_ib_results[data-visible=true] body {
+  overflow: hidden;
 }
 .beautiful_ib_results div {
   padding: 0;
@@ -16,7 +24,7 @@
 }
 .beautiful_ib_results .header {
   text-align: center;
-  margin: 2em 2em 6em 2em;
+  margin: 2em 2em 3em 2em;
   display: flex;
   flex-direction: row;
 }
@@ -35,11 +43,15 @@
 .beautiful_ib_results h1 {
   font-size: 3em;
   margin: 0;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
 }
 .beautiful_ib_results h2 {
   font-size: 1.5em;
   font-weight: 300;
   margin: 0 auto;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
 }
 .beautiful_ib_results .subject-list {
   display: grid;
@@ -73,6 +85,8 @@
   font-size: 1.8em;
   margin: 0;
   display: inline;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
 }
 .beautiful_ib_results .card header span {
   font-size: 1.8em;
@@ -83,6 +97,7 @@
   width: -moz-available;
   width: available;
   font-size: 3em;
+  line-height: 3em;
 }
 .beautiful_ib_results .card button {
   align-self: flex-end;
@@ -121,12 +136,12 @@
   outline: none;
   border-radius: 0.3em;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  background-color: #1ab7ea;
+  background-color: #13b6ea;
   color: #ecf0f1;
   transition: background-color 0.3s;
 }
 .beautiful_ib_results .card .card-face .btn:hover, .beautiful_ib_results .card .card-face .btn:focus {
-  background-color: #1295bf;
+  background-color: #0f91bb;
 }
 .beautiful_ib_results .card .card-face .btn > * {
   position: relative;
@@ -167,6 +182,9 @@
   padding-top: 120%;
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
+.beautiful_ib_results .card[data-flipped=true] .card-inner {
+  transform: rotateY(180deg);
+}
 .beautiful_ib_results .card-inner {
   position: relative;
   width: 100%;
@@ -178,14 +196,12 @@
   transform-style: preserve-3d;
   border-radius: 0.3em;
 }
-.beautiful_ib_results .card[data-flipped=true] .card-inner {
-  transform: rotateY(180deg);
-}
 .beautiful_ib_results footer {
   text-align: right;
   width: available;
   width: -moz-available;
   padding: 1em;
+  margin-top: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,7 +9,7 @@ $tablet: "(min-width: 550px) and (max-width: 849px)";
 $desktop: "(min-width: 850px)";
 
 //variables
-$colour_primary: #1ab7ea;
+$colour_primary: #13b6ea; //1ab7ea
 $font_size_subject: 1.8em;
 
 //styles
@@ -18,12 +18,24 @@ $font_size_subject: 1.8em;
   background: #fafafa;
   position: absolute;
   width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 999999;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+
+  &[data-visible=false]{
+	display: none;
+  }
+
+  &[data-visible=true]{
+	body {
+	  overflow: hidden;
+	}
+  }
 
   div {
 	padding: 0;
@@ -32,7 +44,7 @@ $font_size_subject: 1.8em;
 
   .header {
 	text-align: center;
-	margin: 2em 2em 6em 2em;
+	margin: 2em 2em 3em 2em;
 	display: flex;
 	flex-direction: row;
   }
@@ -54,12 +66,16 @@ $font_size_subject: 1.8em;
   h1 {
 	font-size: 3em;
 	margin: 0;
+	border: none;
+	color: rgba(0,0,0,0.8);
   }
 
   h2 {
 	font-size: 1.5em;
 	font-weight: 300;
 	margin: 0 auto;
+	border: none;
+	color: rgba(0,0,0,0.8);
   }
 
   .subject-list {
@@ -93,6 +109,8 @@ $font_size_subject: 1.8em;
 		font-size: $font_size_subject;
 		margin: 0;
 		display: inline;
+		border: none;
+		color: rgba(0,0,0,0.8);
 	  }
 
 	  span {
@@ -106,6 +124,7 @@ $font_size_subject: 1.8em;
 	  width: -moz-available;
 	  width: available;
 	  font-size: 3em;
+	  line-height: 3em;
 	}
 
 	button {
@@ -193,6 +212,10 @@ $font_size_subject: 1.8em;
 		}
 	  }
 	}
+
+	&[data-flipped=true] .card-inner {
+	  transform: rotateY(180deg);
+	}
   }
 
   .card-inner {
@@ -207,14 +230,11 @@ $font_size_subject: 1.8em;
 	border-radius: 0.3em;
   }
 
-  .card[data-flipped=true] .card-inner {
-	transform: rotateY(180deg);
-  }
-
   footer {
 	text-align: right;
 	width: available;
 	width: -moz-available;
 	padding: 1em;
+	margin-top: 2em;
   }
 }
