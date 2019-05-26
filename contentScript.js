@@ -44,7 +44,7 @@
                     <div class="spacer"></div>
                     <h1>IB Results</h1>
                     <div class="spacer"></div>
-                    <button id="close" onclick='this.parentNode.parentNode.setAttribute("data-visible", "false");'>&#10006;</button>
+                    <button id="close">&#10006;</button>
                 </header>
             
                 <section class="subject-list">
@@ -69,20 +69,12 @@
                             <span class="level">SL</span>
                         </header>
                         <div class="spacer"></div>
-                        <button type="button" class="btn" onclick='const card = this.parentNode.parentNode.parentNode;
-            let flipped = card.getAttribute("data-flipped");
-            if (flipped === "true") {
-                card.setAttribute("data-flipped", "false");
-            } else card.setAttribute("data-flipped", "true");'><span>More</span></button>
+                        <button type="button" class="btn"><span>More</span></button>
                     </div>
                     <div class="card-face back">
                         <span class="score">5</span>
                         <div class="spacer"></div>
-                        <button type="button" class="btn stroked" onclick='const card = this.parentNode.parentNode.parentNode;
-            let flipped = card.getAttribute("data-flipped");
-            if (flipped === "true") {
-                card.setAttribute("data-flipped", "false");
-            } else card.setAttribute("data-flipped", "true");'><span>Less</span></button>
+                        <button type="button" class="btn stroked"><span>Less</span></button>
                     </div>
                 </div>
             </div>
@@ -132,7 +124,9 @@
 
 
         //render the content of the wrapper template
-        document.body.append(document.querySelector("#template_wrapper").content);
+        let wrapper = document.querySelector("#template_wrapper").content.cloneNode(true);
+        wrapper.querySelector("#close").addEventListener("click", close);
+        document.body.append(wrapper);
 
         //get the element within the template which will contain the subjects
         const subject_list = document.querySelector(".subject-list");
@@ -151,11 +145,15 @@
             clone.querySelector(".level").textContent = subject.level;
             clone.querySelector(".score").textContent = subject.score;
 
+            //add toggle event listener
+            clone.querySelectorAll("button").forEach(button => {
+                button.addEventListener("click", toggle.bind(null, button));
+            });
+
             //render the subject
             subject_list.append(clone);
         });
 
-        /* FIXME: find alternative to exportFunction in chrome
         //export the toggle function
         function toggle(ctx) {
             const card = ctx.parentNode.parentNode.parentNode;
@@ -164,29 +162,35 @@
                 card.setAttribute("data-flipped", "false");
             } else card.setAttribute("data-flipped", "true");
         }
-        exportFunction(toggle, window, {defineAs: "toggle"});
 
         //export the close function
         function close() {
             results.setAttribute("data-visible", "false");
+
+            //show all other elements
+            Array.from(document.querySelector("body").children).forEach(child => {
+                if (child.id === "template_wrapper" && child.id === "template_subject" && child.id === "beautiful_ib_results") {
+                    return;
+                }
+
+                child.removeAttribute("hidden");
+            });
         }
-        exportFunction(close, window, {defineAs: "close"});
-         */
     }
 
     //display the results
     function showResults() {
         //get the wrapper div element
         const results = document.querySelector(".beautiful_ib_results");
-        /*Array.from(document.querySelector("body").children).forEach(child => {
+
+        //hide all other elements
+        Array.from(document.querySelector("body").children).forEach(child => {
             if (child.id === "template_wrapper" && child.id === "template_subject" && child.id === "beautiful_ib_results") {
-                return
+                return;
             }
 
             child.setAttribute("hidden", "true");
         });
-
-         */
 
         //set to visible
         results.setAttribute("data-visible", "true");
