@@ -1,8 +1,15 @@
-console.log("BEAUTIFUL IB RESULTS: %", "loading");
+console.log("BEAUTIFUL IB RESULTS: %s", "loading");
+
+//defining browser to support chrome
+window.browser = (function () {
+    return window.msBrowser ||
+        window.browser ||
+        window.chrome;
+})();
 
 //when the toolbar button is clicked call messageTab
 browser.browserAction.onClicked.addListener(()=>{
-    var querying = browser.tabs.query({
+    let querying = browser.tabs.query({
         active: true,
         currentWindow: true
     });

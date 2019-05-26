@@ -1,4 +1,11 @@
 (function () {
+    //defining browser to support chrome
+    window.browser = (function () {
+        return window.msBrowser ||
+            window.browser ||
+            window.chrome;
+    })();
+
     //check if we are currently on the results page and render results
     if (window.location.href.includes("result") || window.location.href.includes("Result")) {
         renderBeautify();
@@ -22,7 +29,7 @@
             return;
         }
 
-        console.log("BEAUTIFUL IB RESULTS: %", "beautifying");
+        console.log("BEAUTIFUL IB RESULTS: %s", "beautifying");
         window.beautifyHasLoaded = true;
 
         //add the wrapper template
