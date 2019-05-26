@@ -7,18 +7,17 @@ window.browser = (function () {
         window.chrome;
 })();
 
-//when the toolbar button is clicked call messageTab
-browser.browserAction.onClicked.addListener(()=>{
-    let querying = browser.tabs.query({
-        active: true,
-        currentWindow: true
-    });
-    querying.then(messageTab);
-});
-
 //send message to the current tab
 function messageTab(tabs) {
     browser.tabs.sendMessage(tabs[0].id, {
         action: "display"
     });
 }
+
+//when the toolbar button is clicked call messageTab
+browser.browserAction.onClicked.addListener(()=>{
+    browser.tabs.query({
+        active: true,
+        currentWindow: true
+    }, messageTab);
+});

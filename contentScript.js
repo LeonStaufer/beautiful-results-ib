@@ -21,6 +21,10 @@
     }
     browser.runtime.onMessage.addListener(handleClick);
 
+    //creating a meta viewport tag
+    let meta = document.createElement("meta");
+    meta.setAttribute("name", "viewport");
+    meta.setAttribute("content", "width=device-width, initial-scale=1");
 
     //main function to render the beautified subject list
     function renderBeautify(){
@@ -35,12 +39,12 @@
         //add the wrapper template
         document.body.innerHTML += `
         <template id="template_wrapper">
-            <main class="beautiful_ib_results" data-visible="false">
+            <main id="beautiful_ib_results" class="beautiful_ib_results" data-visible="false">
                 <header class="header">
                     <div class="spacer"></div>
                     <h1>IB Results</h1>
                     <div class="spacer"></div>
-                    <button id="close" onclick="window.close()">&#10006;</button>
+                    <button id="close" onclick='this.parentNode.parentNode.setAttribute("data-visible", "false");'>&#10006;</button>
                 </header>
             
                 <section class="subject-list">
@@ -65,12 +69,20 @@
                             <span class="level">SL</span>
                         </header>
                         <div class="spacer"></div>
-                        <button type="button" class="btn" onclick="window.toggle(this)"><span>More</span></button>
+                        <button type="button" class="btn" onclick='const card = this.parentNode.parentNode.parentNode;
+            let flipped = card.getAttribute("data-flipped");
+            if (flipped === "true") {
+                card.setAttribute("data-flipped", "false");
+            } else card.setAttribute("data-flipped", "true");'><span>More</span></button>
                     </div>
                     <div class="card-face back">
                         <span class="score">5</span>
                         <div class="spacer"></div>
-                        <button type="button" class="btn stroked" onclick="window.toggle(this)"><span>Less</span></button>
+                        <button type="button" class="btn stroked" onclick='const card = this.parentNode.parentNode.parentNode;
+            let flipped = card.getAttribute("data-flipped");
+            if (flipped === "true") {
+                card.setAttribute("data-flipped", "false");
+            } else card.setAttribute("data-flipped", "true");'><span>Less</span></button>
                     </div>
                 </div>
             </div>
@@ -143,6 +155,7 @@
             subject_list.append(clone);
         });
 
+        /* FIXME: find alternative to exportFunction in chrome
         //export the toggle function
         function toggle(ctx) {
             const card = ctx.parentNode.parentNode.parentNode;
@@ -158,14 +171,27 @@
             results.setAttribute("data-visible", "false");
         }
         exportFunction(close, window, {defineAs: "close"});
+         */
     }
 
     //display the results
     function showResults() {
         //get the wrapper div element
         const results = document.querySelector(".beautiful_ib_results");
+        /*Array.from(document.querySelector("body").children).forEach(child => {
+            if (child.id === "template_wrapper" && child.id === "template_subject" && child.id === "beautiful_ib_results") {
+                return
+            }
+
+            child.setAttribute("hidden", "true");
+        });
+
+         */
 
         //set to visible
         results.setAttribute("data-visible", "true");
+
+        //adding meta viewport tag
+        document.querySelector("head").appendChild(meta);
     }
 }());
