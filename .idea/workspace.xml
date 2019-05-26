@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77f245ba-c70f-487e-8355-8ba81860e2ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshot_2019-05-24 IB Results.png" beforeDir="false" afterPath="$PROJECT_DIR$/Screenshot1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contentScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/contentScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,14 +20,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5485669">
+    <splitter split-orientation="horizontal" split-proportion="0.51508915">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/manifest.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+                <state relative-caret-position="459">
+                  <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -36,28 +35,27 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/background.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+                <state>
+                  <caret column="47" selection-start-column="47" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/contentScript.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+                <state relative-caret-position="391">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
                   <folding>
                     <element signature="n#template#0;n#!!top" />
-                    <element signature="n#template#0;n#!!top" />
-                    <element signature="e#1514#1614#0" />
-                    <element signature="e#1585#1678#0" />
-                    <element signature="e#1688#1777#0" />
-                    <element signature="e#1787#1902#0" />
-                    <element signature="e#1912#2010#0" />
-                    <element signature="e#2020#2121#0" />
-                    <element signature="e#2131#2209#0" />
-                    <element signature="e#2219#2331#0" />
+                    <element signature="e#2296#2412#0" />
+                    <element signature="e#2426#2535#0" />
+                    <element signature="e#2549#2654#0" />
+                    <element signature="e#2668#2799#0" />
+                    <element signature="e#2813#2927#0" />
+                    <element signature="e#2941#3058#0" />
+                    <element signature="e#3072#3162#0" />
+                    <element signature="e#3176#3304#0" />
                   </folding>
                 </state>
               </provider>
@@ -70,8 +68,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="385">
-                  <caret line="220" column="15" lean-forward="true" selection-start-line="220" selection-start-column="15" selection-end-line="220" selection-end-column="15" />
+                <state relative-caret-position="136">
+                  <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/demo.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -101,6 +108,9 @@
       <find>footer</find>
       <find>h3</find>
       <find>score</find>
+      <find>result</find>
+      <find>media</find>
+      <find>console.l</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,9 +122,9 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/style.scss" />
-        <option value="$PROJECT_DIR$/manifest.json" />
-        <option value="$PROJECT_DIR$/background.js" />
         <option value="$PROJECT_DIR$/contentScript.js" />
+        <option value="$PROJECT_DIR$/background.js" />
+        <option value="$PROJECT_DIR$/manifest.json" />
       </list>
     </option>
   </component>
@@ -124,8 +134,8 @@
     </order>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1140" />
-    <option name="width" value="1427" />
+    <option name="x" value="1071" />
+    <option name="width" value="1496" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -141,11 +151,6 @@
             <path>
               <item name="prettier-ib-results" type="b2602c69:ProjectViewProjectNode" />
               <item name="prettier-ib-results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prettier-ib-results" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prettier-ib-results" type="462c0819:PsiDirectoryNode" />
-              <item name="style.scss" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -167,6 +172,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\prettier-ib-results" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -201,7 +211,7 @@
       <option name="presentableId" value="Default" />
       <updated>1558455683781</updated>
       <workItem from="1558455684921" duration="15159000" />
-      <workItem from="1558527228217" duration="7285000" />
+      <workItem from="1558527228217" duration="11402000" />
     </task>
     <task id="LOCAL-00001" summary="changed indents">
       <created>1558461866255</created>
@@ -217,19 +227,33 @@
       <option name="project" value="LOCAL" />
       <updated>1558473845696</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finally works">
+      <created>1558734087596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558734087596</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added screenshot">
+      <created>1558734203621</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558734203621</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22444000" />
+    <option name="totallyTimeSpent" value="26561000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1140" y="0" width="1427" height="1047" extended-state="0" />
+    <frame x="1071" y="0" width="1496" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.17356688" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.17283951" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32995495" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32995495" />
@@ -238,7 +262,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32995495" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.19594595" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.0731982" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32995495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -252,7 +276,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed indents" />
     <MESSAGE value="prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="prototype" />
+    <MESSAGE value="finally works" />
+    <MESSAGE value="added screenshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="added screenshot" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/style.css">
@@ -262,50 +288,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
+    <entry file="file://$PROJECT_DIR$/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1156">
-          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+        <state relative-caret-position="323">
+          <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
+    <entry file="file://$PROJECT_DIR$/Screenshot1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="-1156" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contentScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="n#template#0;n#!!top" />
+            <element signature="e#2296#2412#0" />
+            <element signature="e#2426#2535#0" />
+            <element signature="e#2549#2654#0" />
+            <element signature="e#2668#2799#0" />
+            <element signature="e#2813#2927#0" />
+            <element signature="e#2941#3058#0" />
+            <element signature="e#3072#3162#0" />
+            <element signature="e#3176#3304#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/background.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state>
+          <caret column="47" selection-start-column="47" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contentScript.js">
+    <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding>
-            <element signature="n#template#0;n#!!top" />
-            <element signature="n#template#0;n#!!top" />
-            <element signature="e#1514#1614#0" />
-            <element signature="e#1585#1678#0" />
-            <element signature="e#1688#1777#0" />
-            <element signature="e#1787#1902#0" />
-            <element signature="e#1912#2010#0" />
-            <element signature="e#2020#2121#0" />
-            <element signature="e#2131#2209#0" />
-            <element signature="e#2219#2331#0" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="220" column="15" lean-forward="true" selection-start-line="220" selection-start-column="15" selection-end-line="220" selection-end-column="15" />
+        <state relative-caret-position="136">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -61,12 +61,12 @@
   grid-row-gap: 2em;
   grid-column-gap: 1.5em;
 }
-@media (min-width: 550px) and (max-width: 849px) {
+@media (min-width: 22em) and (max-width: 35em) {
   .beautiful_ib_results .subject-list {
     grid-template-columns: auto auto;
   }
 }
-@media (min-width: 850px) {
+@media (min-width: 35em) {
   .beautiful_ib_results .subject-list {
     grid-template-columns: auto auto auto;
   }

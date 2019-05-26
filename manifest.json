@@ -1,14 +1,21 @@
 {
-  "name": "IB Results",
+  "name": "Beautiful IB Results",
   "description": "Makes every result look beautiful!",
   "author": "Leon",
   "version": "0.0.2",
+  "icons": {
+    "128": "images/icon128.png",
+    "64": "images/icon64.png",
+    "32": "images/icon32.png"
+  },
   "permissions": [
     "activeTab"
   ],
   "browser_action": {
     "default_icon": {
-      "38": "beautify.png"
+      "128": "images/icon128.png",
+      "64": "images/icon64.png",
+      "32": "images/icon32.png"
     },
     "default_title": "Beautify results"
   },
@@ -20,8 +27,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://example.com/*",
-        "*://candidates.ibo.org/*"
+        "*://*.ibo.org/*"
       ],
       "css": [
         "style.css"
