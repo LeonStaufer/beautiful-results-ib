@@ -24,6 +24,7 @@
             showResults();
         }
     }
+
     browser.runtime.onMessage.addListener(handleClick);
 
 
@@ -160,47 +161,53 @@
 
     //render all the results
     function renderResults() {
-        //demo content
-        const subjects = [{
-            subject: "English A: Language and Literature",
-            level: "HL",
-            score: 6
-        },
-            {
-                subject: "Mathematics",
-                level: "SL",
-                score: 5
-            },
-            {
-                subject: "Physics",
-                level: "HL",
-                score: 1
-            },
-            {
-                subject: "German A: Language and Literature",
-                level: "SL",
-                score: 4
-            },
-            {
-                subject: "Computer Science",
-                level: "HL",
-                score: 5
-            },
-            {
-                subject: "Business Management",
-                level: "HL",
-                score: 3
-            },
-            {
-                subject: "Theory of Knowledge",
-                score: "B"
-            },
-            {
-                subject: "Extended Essay",
-                level: "Computer Science",
-                score: "A"
-            }];
-
+        //populate with content
+        let scraped = scrape();
+        if (!scrape.success) {
+            scraped = {
+                success: false,
+                total: 45,
+                subjects: [{
+                    subject: "English A: Language and Literature",
+                    level: "HL",
+                    score: 6
+                },
+                    {
+                        subject: "Mathematics",
+                        level: "SL",
+                        score: 5
+                    },
+                    {
+                        subject: "Physics",
+                        level: "HL",
+                        score: 1
+                    },
+                    {
+                        subject: "German A: Language and Literature",
+                        level: "SL",
+                        score: 4
+                    },
+                    {
+                        subject: "Computer Science",
+                        level: "HL",
+                        score: 5
+                    },
+                    {
+                        subject: "Business Management",
+                        level: "HL",
+                        score: 3
+                    },
+                    {
+                        subject: "Theory of Knowledge",
+                        score: "B"
+                    },
+                    {
+                        subject: "Extended Essay",
+                        level: "Computer Science",
+                        score: "A"
+                    }]
+            };
+        }
 
         //get the element within the template which will contain the subjects
         const subject_list = document.querySelector(".subject-list");
@@ -225,6 +232,21 @@
             //render the subject
             subject_list.append(clone);
         });
+
+        //render total card
+        let cloneTotal = template.content.cloneNode(true);
+
+        //set the total points
+        cloneTotal.querySelector(".subject").textContent = "Total";
+        cloneTotal.querySelector(".score").textContent = scraped.total;
+
+        //add toggle event listener
+        cloneTotal.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", toggle.bind(null, button));
+        });
+
+        //render the subject
+        subject_list.append(cloneTotal);
 
         //toggle function
         function toggle(ctx) {
@@ -324,5 +346,13 @@
 
         //adding meta viewport tag
         document.querySelector("head").appendChild(meta);
+    }
+
+
+    //scrape results from webpage
+    function scrape() {
+        //TODO: need access to alumni page
+
+        return {success: false};
     }
 }());
