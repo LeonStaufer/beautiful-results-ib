@@ -20,11 +20,8 @@
     //show the result if the button in the toolbar is clicked
     function handleClick(request, sender, sendResponse) {
         if (request.action === "display") {
-            console.log(Date.now());
             beautify();
-            console.log(Date.now());
             showResults();
-            console.log(Date.now());
         }
     }
     browser.runtime.onMessage.addListener(handleClick);
