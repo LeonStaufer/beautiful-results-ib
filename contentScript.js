@@ -38,14 +38,14 @@
         }
 
         console.log("BEAUTIFUL IB RESULTS: %s", "beautifying");
-        window.beautifyHasLoaded = true;
 
         renderWrapper();
 
         //check if results have already been published
-        const notification = document.querySelector("#content .notification strong").innerText;
+        const notification = document.querySelector("#content .notification strong") ? document.querySelector("#content .notification strong").innerText : "";
         if (notification.includes("Your results will be published on")) {
             renderNotPublishedError(notification);
+            window.beautifyHasLoaded = true;
             return;
         }
 
@@ -65,6 +65,7 @@
                 renderResults(results);
             }
         }
+        window.beautifyHasLoaded = true;
     }
 
 
