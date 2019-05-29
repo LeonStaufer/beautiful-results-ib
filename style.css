@@ -24,7 +24,7 @@
 }
 .beautiful_ib_results .header {
   text-align: center;
-  margin: 2em 2em 3em 2em;
+  margin: 2rem 2rem 3rem 2rem;
   display: flex;
   flex-direction: row;
 }
@@ -35,19 +35,20 @@
   height: 0;
 }
 .beautiful_ib_results #close {
-  font-size: 2em;
+  font-size: 2rem;
   background: none;
   margin: 0 0 0 auto;
   border: none;
 }
 .beautiful_ib_results h1 {
-  font-size: 3em;
+  font-size: 3rem;
   margin: 0;
   border: none;
   color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
 }
 .beautiful_ib_results h2 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 300;
   margin: 0 auto;
   border: none;
@@ -58,46 +59,49 @@
   max-width: 1200px;
   margin: 0 auto;
   grid-template-columns: auto;
-  grid-row-gap: 2em;
-  grid-column-gap: 1.5em;
+  grid-row-gap: 2rem;
+  grid-column-gap: 1.5rem;
 }
-@media (min-width: 22em) and (max-width: 35em) {
+@media (min-width: 35rem) and (max-width: 50rem) {
   .beautiful_ib_results .subject-list {
     grid-template-columns: auto auto;
   }
 }
-@media (min-width: 35em) {
+@media (min-width: 50rem) {
   .beautiful_ib_results .subject-list {
     grid-template-columns: auto auto auto;
   }
 }
 .beautiful_ib_results .card {
   justify-self: center;
-  width: 15em;
-  height: 15em;
+  width: 15rem;
+  height: 15rem;
   background: none;
 }
 .beautiful_ib_results .card header {
   margin-bottom: 10px;
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .beautiful_ib_results .card header h3 {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   margin: 0;
   display: inline;
   border: none;
   color: rgba(0, 0, 0, 0.8);
 }
 .beautiful_ib_results .card header span {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   color: rgba(0, 0, 0, 0.7);
 }
 .beautiful_ib_results .card .score {
   text-align: center;
   width: -moz-available;
   width: available;
-  font-size: 3em;
-  line-height: 3em;
+  font-size: 3rem;
+  line-height: 3rem;
 }
 .beautiful_ib_results .card button {
   align-self: flex-end;
@@ -107,7 +111,7 @@
   border: none;
   color: rgba(0, 0, 0, 0.7);
   font-weight: 100;
-  font-size: 1.4em;
+  font-size: 1.4rem;
 }
 .beautiful_ib_results .card .card-face {
   display: flex;
@@ -118,11 +122,11 @@
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  padding: 1em;
-  width: calc(100% - 2em);
-  height: calc(100% - 2em);
+  padding: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
   background: #ffffff;
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
 }
 .beautiful_ib_results .card .card-face.back {
   transform: rotateY(180deg);
@@ -134,7 +138,7 @@
   overflow: hidden;
   border-width: 0;
   outline: none;
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   background-color: #13b6ea;
   color: #ecf0f1;
@@ -159,7 +163,7 @@
 }
 .beautiful_ib_results .card .card-face .btn span {
   display: block;
-  padding: 0.2em 0.4em;
+  padding: 0.2rem 0.4rem;
 }
 .beautiful_ib_results .card .card-face .btn:before {
   content: "";
@@ -190,18 +194,19 @@
   width: 100%;
   height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  perspective: 10em;
+  perspective: 10rem;
   background: #ffffff;
   transition: transform 600ms;
   transform-style: preserve-3d;
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
 }
 .beautiful_ib_results footer {
   text-align: right;
   width: available;
   width: -moz-available;
-  padding: 1em;
-  margin-top: 2em;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

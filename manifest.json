@@ -2,6 +2,11 @@
   "name": "Beautiful IB Results",
   "description": "Makes every result look beautiful!",
   "author": "Leon",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@staufer.me"
+    }
+  },
   "version": "0.0.2",
   "icons": {
     "128": "images/icon128.png",
@@ -34,6 +39,7 @@
         "style.css"
       ],
       "js": [
+        "luxon.min.js",
         "contentScript.js"
       ],
       "all_frames": true
