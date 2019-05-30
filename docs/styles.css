@@ -1,0 +1,265 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+    margin: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+    border: 0;
+}
+
+.addon-button {
+    height: 60px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.title-colour {
+    color: #9e9e9e;
+}
+
+.title-contrast {
+    padding: 16px;
+}
+
+::-moz-selection {
+    background-color: #fca806;
+    color: #fff;
+}
+
+::selection {
+    background-color: #fca806;
+    color: #fff;
+}
+
+.padding {
+    padding: 24px;
+}
+
+.fab {
+    position: absolute;
+    right: 20%;
+    bottom: -26px;
+    z-index: 3;
+    background: #fca806 !important;
+    color: white !important;
+}
+
+.header-section {
+    position: relative;
+    height: 600px;
+    width: auto;
+    background-color: #f3f3f3;
+    background-size: cover;
+}
+
+.logo-font {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    line-height: 1;
+    color: #767777;
+    font-weight: 500;
+}
+
+.slogan {
+    font-size: 21px;
+    padding-top: 60px;
+}
+
+.slogan a {
+    text-decoration: none;
+    color: #767777;
+    font-weight: 300;
+}
+
+.transformation-section {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.results-comparison {
+    text-align: right;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.comparison-screen {
+    text-align: center;
+}
+
+.comparison-screen .link-style {
+    margin-top: 16px;
+    display: block;
+    z-index: 2;
+}
+
+.image-link {
+    text-decoration: none;
+}
+
+.android-wear .screen-image {
+    width: 40%;
+    z-index: 1;
+}
+
+
+.comparison-phone {
+    display: inline-block;
+    width: 64px;
+    margin-right: 48px;
+}
+
+.comparison-phone .screen-image {
+    width: 100%;
+    z-index: 1;
+}
+
+
+.android-tablet .screen-image {
+    width: 100%;
+    z-index: 1;
+}
+
+.android-tablet .link-style {
+    display: block;
+    z-index: 2;
+}
+
+
+.comparison-desktop {
+    display: inline-block;
+    width: 300px;
+    margin-right: 80px;
+}
+
+.comparison-desktop .screen-image {
+    width: 100%;
+    z-index: 1;
+}
+
+
+.android-auto .screen-image {
+    display: block;
+    height: 300px;
+    z-index: 1;
+}
+
+
+.add-section {
+    position: relative;
+    background-size: cover;
+    height: 300px;
+}
+
+.add-section-band {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #37474f;
+}
+
+.add-section-band-text {
+    max-width: 800px;
+    margin-left: 25%;
+    padding: 24px;
+    text-align: left;
+    color: white;
+}
+
+.add-section-band-text p {
+    padding-top: 8px;
+}
+
+.link-style {
+    text-decoration: none;
+    color: #fca806 !important;
+}
+
+.link-style:hover {
+    color: #fdb705 !important;
+}
+
+.link-style .material-icons {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+}
+
+.privacy-section {
+    text-align: center;
+}
+
+.privacy-section-text {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 16px 0 16px;
+}
+
+.privacy-section-text p {
+    padding-top: 16px;
+}
+
+.footer {
+    background-color: #fafafa;
+    position: relative;
+}
+
+.footer a:hover {
+    color: #fdb705;
+}
+
+.footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+}
+
+.footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+}
+
+.footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+    .header-image {
+        width: 90%;
+    }
+
+    .padding {
+        padding: 10px;
+    }
+
+    .fab {
+        display: none;
+    }
+
+    .header-section {
+        height: 500px;
+    }
+
+    .add-section-band-text {
+        margin-left: 0;
+    }
+}
