@@ -52,6 +52,11 @@ a img{
     padding: 24px;
 }
 
+.screen-padding {
+    display: inline-block;
+    width: 50px;
+}
+
 .fab {
     position: absolute;
     right: 20%;
