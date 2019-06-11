@@ -1,5 +1,5 @@
 {
-  "name": "Beautiful IB Results",
+  "name": "Beautiful Results for IB",
   "description": "Makes every result look beautiful!",
   "author": "Leon",
   "browser_specific_settings": {
@@ -7,7 +7,7 @@
       "id": "addon@staufer.me"
     }
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icons": {
     "128": "images/icon128.png",
     "64": "images/icon64.png",
