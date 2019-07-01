@@ -87,12 +87,19 @@ $font_size_subject: 1.8rem;
 	grid-row-gap: 2rem;
 	grid-column-gap: 1.5rem;
 
+	.divider {
+	  height: 50px;
+	}
+
 	@media #{$tablet} {
 	  grid-template-columns: auto auto;
 	}
 
 	@media #{$desktop} {
 	  grid-template-columns: auto auto auto;
+	  .divider {
+		display: none;
+	  }
 	}
   }
 
@@ -169,6 +176,7 @@ $font_size_subject: 1.8rem;
 		background-color: $colour_primary;
 		color: #ecf0f1;
 		transition: background-color .3s;
+		height: 50px;
 
 		&:hover, &:focus {
 		  background-color: darken($colour_primary, 10);

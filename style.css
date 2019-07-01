@@ -62,6 +62,9 @@
   grid-row-gap: 2rem;
   grid-column-gap: 1.5rem;
 }
+.beautiful_ib_results .subject-list .divider {
+  height: 50px;
+}
 @media (min-width: 35rem) and (max-width: 50rem) {
   .beautiful_ib_results .subject-list {
     grid-template-columns: auto auto;
@@ -70,6 +73,9 @@
 @media (min-width: 50rem) {
   .beautiful_ib_results .subject-list {
     grid-template-columns: auto auto auto;
+  }
+  .beautiful_ib_results .subject-list .divider {
+    display: none;
   }
 }
 .beautiful_ib_results .card {
@@ -143,6 +149,7 @@
   background-color: #13b6ea;
   color: #ecf0f1;
   transition: background-color 0.3s;
+  height: 50px;
 }
 .beautiful_ib_results .card .card-face .btn:hover, .beautiful_ib_results .card .card-face .btn:focus {
   background-color: #0f91bb;

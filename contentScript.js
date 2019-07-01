@@ -48,16 +48,13 @@
         }
 
         //get results from webpage
-        const resultElements = Array.from(document.querySelectorAll(".rule"));
-        let results = resultElements.map(elem => {
-            return elem.innerText;
-        });
+        const results = extractResults();
 
         //render error if no results could be found
-        if (results.length === 0) {
+        if (!results.success) {
             renderNoResultsError();
         } else {
-            if (results[0]) {
+            if (results.subjects.length < 1) {
                 renderNoResultsError()
             } else {
                 renderResults(results);
@@ -85,7 +82,7 @@
             
                 <div class="spacer"></div>
                 <footer>
-                    <span>Made with love by a fellow IB student</span>
+                    <span>Made with love by <a href="https://github.com/LeonStaufer/beautiful-results-ib">a fellow IB student</a></span>
                 </footer>
             </main>
         </template>
@@ -98,8 +95,8 @@
                 <div class="card-inner">
                     <div class="card-face front">
                         <header class="subject-header">
-                            <h3 class="subject">English A: Language and Literature</h3>
-                            <span class="level">SL</span>
+                            <h3 class="subject">Subject</h3>
+                            <span class="level"></span>
                         </header>
                         <div class="spacer"></div>
                         <button type="button" class="btn"><span>More</span></button>
@@ -121,7 +118,7 @@
                 <div class="card-inner">
                     <div class="card-face front">
                         <header class="subject-header">
-                            <h3 class="subject">English A: Language and Literature</h3>
+                            <h3 class="subject">Error</h3>
                             <div class="spacer"></div>
                             <span class="level"></span>
                         </header>
@@ -160,62 +157,54 @@
 
 
     //render all the results
-    function renderResults() {
-        //populate with content
-        let scraped = scrape();
-        if (!scrape.success) {
-            scraped = {
-                success: false,
-                total: 45,
-                subjects: [{
-                    subject: "English A: Language and Literature",
-                    level: "HL",
-                    score: 6
-                },
-                    {
-                        subject: "Mathematics",
-                        level: "SL",
-                        score: 5
-                    },
-                    {
-                        subject: "Physics",
-                        level: "HL",
-                        score: 1
-                    },
-                    {
-                        subject: "German A: Language and Literature",
-                        level: "SL",
-                        score: 4
-                    },
-                    {
-                        subject: "Computer Science",
-                        level: "HL",
-                        score: 5
-                    },
-                    {
-                        subject: "Business Management",
-                        level: "HL",
-                        score: 3
-                    },
-                    {
-                        subject: "Theory of Knowledge",
-                        score: "B"
-                    },
-                    {
-                        subject: "Extended Essay",
-                        level: "Computer Science",
-                        score: "A"
-                    }]
-            };
-        }
-
+    function renderResults(results) {
         //get the element within the template which will contain the subjects
         const subject_list = document.querySelector(".subject-list");
         //get the subject template element
         const template = document.querySelector("#template_subject");
 
+        //render passed card
+        let clonePassed = template.content.cloneNode(true);
+
+        //set the total points
+        clonePassed.querySelector(".subject").textContent = "Diploma?";
+        clonePassed.querySelector(".score").textContent = results.passed;
+
+        //add toggle event listener
+        clonePassed.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", toggle.bind(null, button));
+        });
+
+        //render the subject
+        subject_list.append(clonePassed);
+
+
+        //render total card
+        let cloneTotal = template.content.cloneNode(true);
+
+        //set the total points
+        cloneTotal.querySelector(".subject").textContent = "Total";
+        cloneTotal.querySelector(".score").textContent = results.total;
+
+        //add toggle event listener
+        cloneTotal.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", toggle.bind(null, button));
+        });
+
+        //render the subject
+        subject_list.append(cloneTotal);
+
+
+        //add divider
+        let divider = document.createElement("div");
+        let dividerStyled = document.createElement("div");
+        dividerStyled.setAttribute("class", "divider");
+        subject_list.append(dividerStyled);
+        subject_list.append(divider);
+
+
         //loop through all subjects
-        subjects.forEach(subject => {
+        results.subjects.forEach(subject => {
             //create a clone of the template
             let clone = template.content.cloneNode(true);
 
@@ -233,21 +222,6 @@
             subject_list.append(clone);
         });
 
-        //render total card
-        let cloneTotal = template.content.cloneNode(true);
-
-        //set the total points
-        cloneTotal.querySelector(".subject").textContent = "Total";
-        cloneTotal.querySelector(".score").textContent = scraped.total;
-
-        //add toggle event listener
-        cloneTotal.querySelectorAll("button").forEach(button => {
-            button.addEventListener("click", toggle.bind(null, button));
-        });
-
-        //render the subject
-        subject_list.append(cloneTotal);
-
         //toggle function
         function toggle(ctx) {
             const card = ctx.parentNode.parentNode.parentNode;
@@ -258,6 +232,70 @@
         }
     }
 
+
+    //extract results
+    function extractResults() {
+        let results = {
+            success: false,
+            subjects: []
+        };
+
+        try {
+            const strongs = Array.from(document.querySelectorAll("#content p strong"));
+            strongs.forEach(strong => {
+                if (strong.innerText === "Results:") {
+                    results.passed = strong.parentNode.lastChild.data;
+                } else if (strong.innerText === "Total points:") {
+                    results.total = strong.parentNode.lastChild.data;
+                }
+            });
+
+            //loop over table bodies
+            let table = document.querySelector("#content table");
+            Array.from(table.children).forEach(child => {
+                if (child.nodeName.toUpperCase() !== "TBODY") return;
+
+                //exit if table body is empty
+                if (child.children.length < 1) return;
+                if (child.children[0].innerText === "None") return;
+
+                //loop over subjects
+                Array.from(child.children).forEach(subject => {
+                    let name = subject.children[1].innerText;
+                    let level = "";
+                    let grade = subject.children[2].innerText;
+
+                    if (name.includes("SL")) {
+                        let index = name.indexOf("SL");
+                        name = name.slice(0, index - 1);
+                        level = "SL";
+                    } else if (name.includes("HL")) {
+                        let index = name.indexOf("HL");
+                        name = name.slice(0, index - 1);
+                        level = "HL";
+                    } else if (name.includes("EE")) {
+                        name = "Extended Essay";
+                    } else if (name.includes("THEORY")) {
+                        name = "Theory of Knowledge";
+                    }
+
+                    results.subjects.push({
+                        subject: name,
+                        level: level,
+                        score: grade
+                    });
+                });
+            });
+
+            results.success = true;
+            return results;
+        } catch (e) {
+            console.warn(e);
+
+            results.success = false;
+            return results;
+        }
+    }
 
     //render the not published error element
     function renderNotPublishedError(notification) {
