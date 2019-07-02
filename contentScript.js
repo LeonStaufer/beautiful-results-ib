@@ -47,6 +47,14 @@
             return;
         }
 
+        //check if on transcript page
+        const content = document.querySelector("#content").innerHTML;
+        if (content.includes("Institute name")) {
+            renderNoResultsError();
+            window.beautifyHasLoaded = true;
+            return;
+        }
+
         //get results from webpage
         const results = extractResults();
 
